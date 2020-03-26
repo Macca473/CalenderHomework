@@ -45,46 +45,38 @@ $.ajax({
         return curtimenum;
     }
 
-    var curtim =  curtime() + 900;
+    var curtim =  curtime()
 
-    console.log("time " + curtime() + " " + curtim)
+    // console.log("time " + curtime() + " " + curtim);
     
 
     $(".time-block").html(function() {
         var varst = $(this).children("input").attr('id');
         var varnum = Number(varst);
-        // console.log("varnum " + varnum);s
 
-        if (varnum > 1200) { 
-
-            // console.log(firstnum + "yes");
-            // $(this).remove("present");
-            //     var greencss = $(this).prepend();
-            //     greencss.toggleClass("future");
-
-            // $(".time-block").toggleClass("future");
-
+        if (varnum > curtim) { 
             $(this).toggleClass("future");
 
-                // $(".time-block").init(function() {
-                //     // $(this).remove(".present");
-                //     $(this).toggleClass("future");
-                // })
         }
       });
 
-    remcolfun();
+    //////////////////////////////////////////////////////////////////////
 
-    // var varst =     $(".time-block").children("input").index();
-    //     var varnum = Number(varst); 
-    //     console.log("varnum " + varst);
+    
+
+    $(".form-control").html(function() {
+        console.log(localStorage.getItem($(this).attr("id")));
+        $(this).val(localStorage.getItem($(this).attr("id")));
+        // localStorage.setItem($(this).attr("id"),$(this).val());
+        localStorage.getItem($(this).attr("id"));
+    })
+
+
+
+    $("#submit").click(function() {
+        $(".form-control").html(function() {
+            console.log($(this).attr("id") + " " + $(this).val());
+            localStorage.setItem($(this).attr("id"),$(this).val());
+        })
+      })
 });
-
-
-// (response => response.length > 6);
-
-// $(".number").click(function() {
-//     firstnum = $(this).text();
-//     console.log(firstnum);
-//     addingnums();
-//   })
