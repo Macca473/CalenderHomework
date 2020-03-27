@@ -1,5 +1,7 @@
 # CalenderHomework
 
+Heres the link but it doesn't seam to link to the api: https://macca473.github.io/CalenderHomework/index.html
+
 GIVEN I am using a daily planner to create a schedule
 WHEN I open the planner
 THEN the current day is displayed at the top of the calendar
